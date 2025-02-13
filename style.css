@@ -1,0 +1,145 @@
+/* Estilos generales */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #87CEEB; /* Cielo azul */
+    overflow: hidden;
+}
+
+/* Cielo */
+.cielo {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 60%;
+    background-color: #87CEEB; /* Azul cielo */
+    opacity: 0;
+    animation: aparecer 1.5s ease-out forwards;
+}
+
+/* Sol */
+.sol {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    width: 80px;
+    height: 80px;
+    background-color: yellow;
+    border-radius: 50%;
+    box-shadow: 0 0 30px rgba(255, 255, 0, 0.8);
+    opacity: 0;
+    animation: aparecer 1.5s ease-out forwards;
+    animation-delay: 1s;
+}
+
+/* Tierra */
+.tierra {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40%;
+    background-color: #69ac2a; /* Verde pasto */
+    opacity: 0;
+    animation: aparecer 1.5s ease-out forwards;
+    animation-delay: 2s;
+}
+
+/* Flor */
+.flor {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    z-index: 2;
+    opacity: 0;
+    animation: aparecer 1.5s ease-out forwards;
+    animation-delay: 3s;
+}
+
+/* Pétalos */
+.petalo {
+    position: absolute;
+    width: 132px;
+    height: 147px;
+    background-color: #c03279;
+    border-radius: 50%;
+    opacity: 0;
+    animation: aparecer 1s ease-out forwards;
+}
+
+.petalo-1 { transform: rotate(0deg); top: 0; left: 60px; animation-delay: 3.5s; }
+.petalo-2 { transform: rotate(90deg); top: 60px; left: 0; animation-delay: 4s; }
+.petalo-3 { transform: rotate(180deg); top: 120px; left: 60px; animation-delay: 4.5s; }
+.petalo-4 { transform: rotate(270deg); top: 60px; left: 120px; animation-delay: 5s; }
+
+/* Centro de la flor */
+.centro {
+    position: absolute;
+    top: 99px;
+    left: 81px;
+    width: 80px;
+    height: 80px;
+    background-color: yellow;
+    border-radius: 50%;
+    opacity: 0;
+    animation: aparecer 1s ease-out forwards;
+    animation-delay: 5.5s;
+}
+
+/* Tallo */
+.tallo {
+    position: absolute;
+    width: 27px;
+    height: 130px;
+    background-color: green;
+    left: 108px;
+    top: 180px;
+    opacity: 0;
+    animation: aparecer 1s ease-out forwards;
+    animation-delay: 6s;
+}
+
+/* Título */
+.titulo {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 40px;
+    color: #cd6be0;
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 10;
+    opacity: 0;
+    animation: aparecer 1.5s ease-out forwards;
+    animation-delay: 6.5s;
+}
+
+/* Pajaritos */
+.pajaro {
+    position: absolute;
+    top: 20%;
+    width: 30px;
+    height: 20px;
+    background: black;
+    clip-path: polygon(0% 100%, 50% 0%, 100% 100%, 50% 50%);
+    animation: volar 5s linear infinite;
+}
+
+.pajaro-1 { left: -50px; animation-delay: 0s; }
+.pajaro-2 { left: -100px; animation-delay: 2s; }
+.pajaro-3 { left: -150px; animation-delay: 4s; }
+
+/* Animaciones */
+@keyframes aparecer {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes volar {
+    0% { transform: translateX(0) translateY(0); }
+    50% { transform: translateX(50vw) translateY(-20px); }
+    100% { transform: translateX(100vw) translateY(0); }
+}
